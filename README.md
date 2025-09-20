@@ -19,7 +19,11 @@ This was coded on Visual Studio 2022. Technically, the code is reusable and modu
 
 The frontend of the website was built with HTML and CSS for the web forms. 
 
-The backend was built with C# and the ASP.NET framework, and the application was integrated with a Microsoft SQL Server database named 'CozyComfort DB'. Similar functions were categorized in one web service; then, each service was assigned a reference to the frontend. An instance of the web service was invoked as needed through a SOAP client. This approach enables clean, easily maintainable code, where the frontend and backend are neatly separated.
+The backend was built with C# and the ASP.NET framework, and the application was integrated with a Microsoft SQL Server database named 'CozyComfort DB'. 
+
+You will have to create a database, and enter the data source, username, and password you set in each of the web services, for the application to run without any errors. 
+
+Similar functions were categorized in one web service; then, each service was assigned a reference to the frontend. An instance of the web service was invoked as needed through a SOAP client. This approach enables clean, easily maintainable code, where the frontend and backend are neatly separated.
 
 ## Lessons Learned
 
