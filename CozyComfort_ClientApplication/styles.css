@@ -1,0 +1,260 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #5C3345;
+    background-color: #f9f0f0;
+    display: flex;
+    justify-content: left;
+    margin-left:50px;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #FFD9DA;
+    text-align: center;
+    padding: 70px 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(183, 105, 105, 0.1);
+}
+
+.logo {
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #5C3345;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-link {
+    display: inline-block;
+    background: #5C3345;
+    border: 1.5px solid black;
+    padding: 15px 30px;
+    border-radius: 100px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #FFD9DA;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover {
+    background: #FFD9DA;
+    color: #5C3345;
+    }
+
+.login-container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.login-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #5C3345;
+    }
+
+.login-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-table td {
+        padding: 8px 0;
+    }
+
+input[type="text"],
+input[type="password"],
+textarea{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    padding: 10px;
+    background-color: #e0e0e0;
+    font-size: 14px;
+}
+
+asp\:Label,
+#lblText {
+    display: block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: red;
+    align-items:center;
+}
+
+.label-input {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.reg-container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.reg-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #5C3345;
+    }
+
+.reg-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.reg-table td {
+        padding: 8px 0;
+    }
+
+.navbar {
+    width: 100%;
+    background-color: #5C3345;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFD9DA;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-links a {
+    color: #FFD9DA;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+        color: #f9f0f0;
+    }
+
+select,
+asp\:DropDownList {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto; /* center the container */
+    padding: 20px;
+    padding-top: 100px;
+}
+
+.form-table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+.gridview {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left:0;
+    font-family: 'Poppins', sans-serif;
+    align-items:flex-end;
+}
+
+.gridview th {
+    background-color: #5C3345;
+    color: #FFD9DA;
+    padding: 10px;
+    text-align: left;
+}
+
+.gridview td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    color: #333;
+}
+
+.gridview tr:hover td {
+    background-color: #f9f0f0;
+
+}
+
+.form-container-cat-mat {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.form-box {
+    flex: 1;  
+    width:500px;
+    border: 1px solid #f5c2e7;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.gridview .btn-link {
+    background-color: #5C3345;
+    color: #FFD9DA;
+    padding: 4px 8px;
+    font-size: 12px;
+    border: 1px solid #f48fb1;
+    border-radius: 4px;
+    margin: 2px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.gridview .btn-link:hover {
+    background-color:#5C3345;
+    color: white;
+}

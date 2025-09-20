@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CozyComfort_ClientApplication.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><asp:ContentPlaceHolder ID="head" runat="server" /></title>
+
+     <!-- css file to be applied to other .aspx files -->
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form2" runat="server">
+        
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </form>
+</body>
+</html>

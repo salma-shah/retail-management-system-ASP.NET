@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="setStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="capacity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="leadTimeDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newStock" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addStockForManufacturerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reduceStockForManufacturerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestQuantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isBlanketAvailableForManufacturerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductionCapacityAndLeadTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductionCapacityAndLeadTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductionCapacityAndLeadTimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestQuantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isBlanketAvailableForDistributorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStockDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStockDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStockDistributorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addStockForDistributorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reduceStockForDistributorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestQuantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isBlanketAvailableForSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isBlanketAvailableForSellerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addStockForSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="addStockForSellerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reduceStockForSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reduceStockForSellerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStockSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastUpdated" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setStockSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setStockSellerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="setStockSoapIn">
+    <wsdl:part name="parameters" element="tns:setStock" />
+  </wsdl:message>
+  <wsdl:message name="setStockSoapOut">
+    <wsdl:part name="parameters" element="tns:setStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="addStockForManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:addStockForManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="addStockForManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:addStockForManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:reduceStockForManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:reduceStockForManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductionCapacityAndLeadTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductionCapacityAndLeadTime" />
+  </wsdl:message>
+  <wsdl:message name="getProductionCapacityAndLeadTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductionCapacityAndLeadTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForDistributor" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStockDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:setStockDistributor" />
+  </wsdl:message>
+  <wsdl:message name="setStockDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:setStockDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="addStockForDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:addStockForDistributor" />
+  </wsdl:message>
+  <wsdl:message name="addStockForDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:addStockForDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:reduceStockForDistributor" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:reduceStockForDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForSeller" />
+  </wsdl:message>
+  <wsdl:message name="isBlanketAvailableForSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:isBlanketAvailableForSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="addStockForSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:addStockForSeller" />
+  </wsdl:message>
+  <wsdl:message name="addStockForSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:addStockForSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:reduceStockForSeller" />
+  </wsdl:message>
+  <wsdl:message name="reduceStockForSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:reduceStockForSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="setStockSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:setStockSeller" />
+  </wsdl:message>
+  <wsdl:message name="setStockSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:setStockSellerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InventoryWebServiceSoap">
+    <wsdl:operation name="setStock">
+      <wsdl:input message="tns:setStockSoapIn" />
+      <wsdl:output message="tns:setStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addStockForManufacturer">
+      <wsdl:input message="tns:addStockForManufacturerSoapIn" />
+      <wsdl:output message="tns:addStockForManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForManufacturer">
+      <wsdl:input message="tns:reduceStockForManufacturerSoapIn" />
+      <wsdl:output message="tns:reduceStockForManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForManufacturer">
+      <wsdl:input message="tns:isBlanketAvailableForManufacturerSoapIn" />
+      <wsdl:output message="tns:isBlanketAvailableForManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductionCapacityAndLeadTime">
+      <wsdl:input message="tns:getProductionCapacityAndLeadTimeSoapIn" />
+      <wsdl:output message="tns:getProductionCapacityAndLeadTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForDistributor">
+      <wsdl:input message="tns:isBlanketAvailableForDistributorSoapIn" />
+      <wsdl:output message="tns:isBlanketAvailableForDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStockDistributor">
+      <wsdl:input message="tns:setStockDistributorSoapIn" />
+      <wsdl:output message="tns:setStockDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addStockForDistributor">
+      <wsdl:input message="tns:addStockForDistributorSoapIn" />
+      <wsdl:output message="tns:addStockForDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForDistributor">
+      <wsdl:input message="tns:reduceStockForDistributorSoapIn" />
+      <wsdl:output message="tns:reduceStockForDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForSeller">
+      <wsdl:input message="tns:isBlanketAvailableForSellerSoapIn" />
+      <wsdl:output message="tns:isBlanketAvailableForSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addStockForSeller">
+      <wsdl:input message="tns:addStockForSellerSoapIn" />
+      <wsdl:output message="tns:addStockForSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForSeller">
+      <wsdl:input message="tns:reduceStockForSellerSoapIn" />
+      <wsdl:output message="tns:reduceStockForSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setStockSeller">
+      <wsdl:input message="tns:setStockSellerSoapIn" />
+      <wsdl:output message="tns:setStockSellerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InventoryWebServiceSoap" type="tns:InventoryWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setStock">
+      <soap:operation soapAction="http://tempuri.org/setStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForManufacturer">
+      <soap:operation soapAction="http://tempuri.org/addStockForManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForManufacturer">
+      <soap:operation soapAction="http://tempuri.org/reduceStockForManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForManufacturer">
+      <soap:operation soapAction="http://tempuri.org/isBlanketAvailableForManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductionCapacityAndLeadTime">
+      <soap:operation soapAction="http://tempuri.org/getProductionCapacityAndLeadTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForDistributor">
+      <soap:operation soapAction="http://tempuri.org/isBlanketAvailableForDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStockDistributor">
+      <soap:operation soapAction="http://tempuri.org/setStockDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForDistributor">
+      <soap:operation soapAction="http://tempuri.org/addStockForDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForDistributor">
+      <soap:operation soapAction="http://tempuri.org/reduceStockForDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForSeller">
+      <soap:operation soapAction="http://tempuri.org/isBlanketAvailableForSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForSeller">
+      <soap:operation soapAction="http://tempuri.org/addStockForSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForSeller">
+      <soap:operation soapAction="http://tempuri.org/reduceStockForSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStockSeller">
+      <soap:operation soapAction="http://tempuri.org/setStockSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InventoryWebServiceSoap12" type="tns:InventoryWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="setStock">
+      <soap12:operation soapAction="http://tempuri.org/setStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/addStockForManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/reduceStockForManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/isBlanketAvailableForManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductionCapacityAndLeadTime">
+      <soap12:operation soapAction="http://tempuri.org/getProductionCapacityAndLeadTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForDistributor">
+      <soap12:operation soapAction="http://tempuri.org/isBlanketAvailableForDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStockDistributor">
+      <soap12:operation soapAction="http://tempuri.org/setStockDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForDistributor">
+      <soap12:operation soapAction="http://tempuri.org/addStockForDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForDistributor">
+      <soap12:operation soapAction="http://tempuri.org/reduceStockForDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBlanketAvailableForSeller">
+      <soap12:operation soapAction="http://tempuri.org/isBlanketAvailableForSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addStockForSeller">
+      <soap12:operation soapAction="http://tempuri.org/addStockForSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reduceStockForSeller">
+      <soap12:operation soapAction="http://tempuri.org/reduceStockForSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStockSeller">
+      <soap12:operation soapAction="http://tempuri.org/setStockSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InventoryWebService">
+    <wsdl:port name="InventoryWebServiceSoap" binding="tns:InventoryWebServiceSoap">
+      <soap:address location="https://localhost:44331/InventoryWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InventoryWebServiceSoap12" binding="tns:InventoryWebServiceSoap12">
+      <soap12:address location="https://localhost:44331/InventoryWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

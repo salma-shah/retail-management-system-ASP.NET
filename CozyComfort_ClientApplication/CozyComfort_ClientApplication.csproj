@@ -1,0 +1,322 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C55D8FB-FE77-4390-BD3B-7A48B4BC638E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CozyComfort_ClientApplication</RootNamespace>
+    <AssemblyName>CozyComfort_ClientApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44375</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\CCLogo.png" />
+    <Content Include="CategoryAndMaterialForm.aspx" />
+    <None Include="Connected Services\BlanketWebService\BlanketWebService.wsdl" />
+    <None Include="Connected Services\InventoryWebService\InventoryWebService.wsdl" />
+    <None Include="Connected Services\OrderRequestWebService\OrderRequestsWebService.wsdl" />
+    <None Include="Connected Services\UserWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\UserWebService\configuration.svcinfo" />
+    <None Include="Connected Services\InventoryWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\InventoryWebService\configuration.svcinfo" />
+    <None Include="Connected Services\InventoryWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\OrderRequestWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\OrderRequestWebService\configuration.svcinfo" />
+    <None Include="Connected Services\OrderRequestWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\BlanketWebService\configuration91.svcinfo" />
+    <None Include="Connected Services\BlanketWebService\configuration.svcinfo" />
+    <None Include="Connected Services\BlanketWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\UserWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="DistributorDashboard.aspx" />
+    <Content Include="DistributorSellerRequestsForm.aspx" />
+    <Content Include="DistributorInventoryForm.aspx" />
+    <Content Include="DistributorManufacturerRequestsForm.aspx" />
+    <Content Include="index.html" />
+    <Content Include="LoginForm.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="ManufacturerBlanketForm.aspx" />
+    <Content Include="ManufacturerDashboard.aspx" />
+    <Content Include="ManufacturerRequestsForm.aspx" />
+    <Content Include="RegisterForm.aspx" />
+    <Content Include="ManufacturerInventoryForm.aspx" />
+    <Content Include="SellerDashboard.aspx" />
+    <Content Include="SellerOrderForm.aspx" />
+    <Content Include="SellerInventoryForm.aspx" />
+    <Content Include="SellerRequestsForm.aspx" />
+    <Content Include="styles.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryAndMaterialForm.aspx.cs">
+      <DependentUpon>CategoryAndMaterialForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryAndMaterialForm.aspx.designer.cs">
+      <DependentUpon>CategoryAndMaterialForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BlanketWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\InventoryWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OrderRequestWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UserWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DistributorDashboard.aspx.cs">
+      <DependentUpon>DistributorDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistributorDashboard.aspx.designer.cs">
+      <DependentUpon>DistributorDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistributorSellerRequestsForm.aspx.cs">
+      <DependentUpon>DistributorSellerRequestsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistributorSellerRequestsForm.aspx.designer.cs">
+      <DependentUpon>DistributorSellerRequestsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistributorInventoryForm.aspx.cs">
+      <DependentUpon>DistributorInventoryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistributorInventoryForm.aspx.designer.cs">
+      <DependentUpon>DistributorInventoryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistributorManufacturerRequestsForm.aspx.cs">
+      <DependentUpon>DistributorManufacturerRequestsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistributorManufacturerRequestsForm.aspx.designer.cs">
+      <DependentUpon>DistributorManufacturerRequestsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerBlanketForm.aspx.cs">
+      <DependentUpon>ManufacturerBlanketForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufacturerBlanketForm.aspx.designer.cs">
+      <DependentUpon>ManufacturerBlanketForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerDashboard.aspx.cs">
+      <DependentUpon>ManufacturerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufacturerDashboard.aspx.designer.cs">
+      <DependentUpon>ManufacturerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerRequestsForm.aspx.cs">
+      <DependentUpon>ManufacturerRequestsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufacturerRequestsForm.aspx.designer.cs">
+      <DependentUpon>ManufacturerRequestsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.aspx.cs">
+      <DependentUpon>RegisterForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.aspx.designer.cs">
+      <DependentUpon>RegisterForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerInventoryForm.aspx.cs">
+      <DependentUpon>ManufacturerInventoryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufacturerInventoryForm.aspx.designer.cs">
+      <DependentUpon>ManufacturerInventoryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityHelper.cs" />
+    <Compile Include="SellerDashboard.aspx.cs">
+      <DependentUpon>SellerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerDashboard.aspx.designer.cs">
+      <DependentUpon>SellerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellerOrderForm.aspx.cs">
+      <DependentUpon>SellerOrderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerOrderForm.aspx.designer.cs">
+      <DependentUpon>SellerOrderForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellerInventoryForm.aspx.cs">
+      <DependentUpon>SellerInventoryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerInventoryForm.aspx.designer.cs">
+      <DependentUpon>SellerInventoryForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellerRequestsForm.aspx.cs">
+      <DependentUpon>SellerRequestsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellerRequestsForm.aspx.designer.cs">
+      <DependentUpon>SellerRequestsForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserWebService\UserWebService.wsdl" />
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BlanketWebService\" />
+    <WCFMetadataStorage Include="Connected Services\InventoryWebService\" />
+    <WCFMetadataStorage Include="Connected Services\OrderRequestWebService\" />
+    <WCFMetadataStorage Include="Connected Services\UserWebService\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58393</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44375/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

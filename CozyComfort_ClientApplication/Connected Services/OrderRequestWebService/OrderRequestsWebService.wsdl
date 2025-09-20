@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="autoOrderID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoOrderIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoOrderIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autoRequestToDistributorID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoRequestToDistributorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoRequestToDistributorIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autoRequestToManufacturerID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoRequestToManufacturerIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoRequestToManufacturerIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestQty" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalCost" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateOfOrder" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="defaultStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="makeOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makeOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculateTotalCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="calculateTotalCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="calculateTotalCostResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllOrderDetailsForSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllOrderDetailsForSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllOrderDetailsForSellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acceptPendingOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orderID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acceptPendingOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acceptPendingOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendRequestToDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestedTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendRequestToDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendRequestToDistributorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsSentToDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsSentToDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRequestsSentToDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsForDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsForDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRequestsForDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStatusForDistributorRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStatusForDistributorRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateStatusForDistributorRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendRequestToManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestedTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendRequestToManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendRequestToManufacturerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsForManufacturer">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllRequestsForManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRequestsForManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsSentToManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllRequestsSentToManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllRequestsSentToManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStatusForManufacturerRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateStatusForManufacturerRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateStatusForManufacturerRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendInformationToDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="information" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendInformationToDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendInformationToDistributorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendInformationToSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="information" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendInformationToSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendInformationToSellerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="autoOrderIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoOrderID" />
+  </wsdl:message>
+  <wsdl:message name="autoOrderIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoOrderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="autoRequestToDistributorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoRequestToDistributorID" />
+  </wsdl:message>
+  <wsdl:message name="autoRequestToDistributorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoRequestToDistributorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="autoRequestToManufacturerIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoRequestToManufacturerID" />
+  </wsdl:message>
+  <wsdl:message name="autoRequestToManufacturerIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoRequestToManufacturerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="makeOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:makeOrder" />
+  </wsdl:message>
+  <wsdl:message name="makeOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:makeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="calculateTotalCostSoapIn">
+    <wsdl:part name="parameters" element="tns:calculateTotalCost" />
+  </wsdl:message>
+  <wsdl:message name="calculateTotalCostSoapOut">
+    <wsdl:part name="parameters" element="tns:calculateTotalCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderDetailsForSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllOrderDetailsForSeller" />
+  </wsdl:message>
+  <wsdl:message name="getAllOrderDetailsForSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllOrderDetailsForSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="acceptPendingOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:acceptPendingOrder" />
+  </wsdl:message>
+  <wsdl:message name="acceptPendingOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:acceptPendingOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestToDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:sendRequestToDistributor" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestToDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:sendRequestToDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsSentToDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRequestsSentToDistributor" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsSentToDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRequestsSentToDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsForDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRequestsForDistributor" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsForDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRequestsForDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusForDistributorRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:updateStatusForDistributorRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusForDistributorRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:updateStatusForDistributorRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestToManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:sendRequestToManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="sendRequestToManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:sendRequestToManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsForManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRequestsForManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsForManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRequestsForManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsSentToManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllRequestsSentToManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="getAllRequestsSentToManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllRequestsSentToManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusForManufacturerRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:updateStatusForManufacturerRequest" />
+  </wsdl:message>
+  <wsdl:message name="updateStatusForManufacturerRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:updateStatusForManufacturerRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendInformationToDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:sendInformationToDistributor" />
+  </wsdl:message>
+  <wsdl:message name="sendInformationToDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:sendInformationToDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendInformationToSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:sendInformationToSeller" />
+  </wsdl:message>
+  <wsdl:message name="sendInformationToSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:sendInformationToSellerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrderRequestsWebServiceSoap">
+    <wsdl:operation name="autoOrderID">
+      <wsdl:input message="tns:autoOrderIDSoapIn" />
+      <wsdl:output message="tns:autoOrderIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToDistributorID">
+      <wsdl:input message="tns:autoRequestToDistributorIDSoapIn" />
+      <wsdl:output message="tns:autoRequestToDistributorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToManufacturerID">
+      <wsdl:input message="tns:autoRequestToManufacturerIDSoapIn" />
+      <wsdl:output message="tns:autoRequestToManufacturerIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="makeOrder">
+      <wsdl:input message="tns:makeOrderSoapIn" />
+      <wsdl:output message="tns:makeOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="calculateTotalCost">
+      <wsdl:input message="tns:calculateTotalCostSoapIn" />
+      <wsdl:output message="tns:calculateTotalCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrderDetailsForSeller">
+      <wsdl:input message="tns:getAllOrderDetailsForSellerSoapIn" />
+      <wsdl:output message="tns:getAllOrderDetailsForSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="acceptPendingOrder">
+      <wsdl:input message="tns:acceptPendingOrderSoapIn" />
+      <wsdl:output message="tns:acceptPendingOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToDistributor">
+      <wsdl:input message="tns:sendRequestToDistributorSoapIn" />
+      <wsdl:output message="tns:sendRequestToDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToDistributor">
+      <wsdl:input message="tns:getAllRequestsSentToDistributorSoapIn" />
+      <wsdl:output message="tns:getAllRequestsSentToDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForDistributor">
+      <wsdl:input message="tns:getAllRequestsForDistributorSoapIn" />
+      <wsdl:output message="tns:getAllRequestsForDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForDistributorRequest">
+      <wsdl:input message="tns:updateStatusForDistributorRequestSoapIn" />
+      <wsdl:output message="tns:updateStatusForDistributorRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToManufacturer">
+      <wsdl:input message="tns:sendRequestToManufacturerSoapIn" />
+      <wsdl:output message="tns:sendRequestToManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForManufacturer">
+      <wsdl:input message="tns:getAllRequestsForManufacturerSoapIn" />
+      <wsdl:output message="tns:getAllRequestsForManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToManufacturer">
+      <wsdl:input message="tns:getAllRequestsSentToManufacturerSoapIn" />
+      <wsdl:output message="tns:getAllRequestsSentToManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForManufacturerRequest">
+      <wsdl:input message="tns:updateStatusForManufacturerRequestSoapIn" />
+      <wsdl:output message="tns:updateStatusForManufacturerRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToDistributor">
+      <wsdl:input message="tns:sendInformationToDistributorSoapIn" />
+      <wsdl:output message="tns:sendInformationToDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToSeller">
+      <wsdl:input message="tns:sendInformationToSellerSoapIn" />
+      <wsdl:output message="tns:sendInformationToSellerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderRequestsWebServiceSoap" type="tns:OrderRequestsWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoOrderID">
+      <soap:operation soapAction="http://tempuri.org/autoOrderID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToDistributorID">
+      <soap:operation soapAction="http://tempuri.org/autoRequestToDistributorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToManufacturerID">
+      <soap:operation soapAction="http://tempuri.org/autoRequestToManufacturerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeOrder">
+      <soap:operation soapAction="http://tempuri.org/makeOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateTotalCost">
+      <soap:operation soapAction="http://tempuri.org/calculateTotalCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrderDetailsForSeller">
+      <soap:operation soapAction="http://tempuri.org/getAllOrderDetailsForSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptPendingOrder">
+      <soap:operation soapAction="http://tempuri.org/acceptPendingOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToDistributor">
+      <soap:operation soapAction="http://tempuri.org/sendRequestToDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToDistributor">
+      <soap:operation soapAction="http://tempuri.org/getAllRequestsSentToDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForDistributor">
+      <soap:operation soapAction="http://tempuri.org/getAllRequestsForDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForDistributorRequest">
+      <soap:operation soapAction="http://tempuri.org/updateStatusForDistributorRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToManufacturer">
+      <soap:operation soapAction="http://tempuri.org/sendRequestToManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForManufacturer">
+      <soap:operation soapAction="http://tempuri.org/getAllRequestsForManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToManufacturer">
+      <soap:operation soapAction="http://tempuri.org/getAllRequestsSentToManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForManufacturerRequest">
+      <soap:operation soapAction="http://tempuri.org/updateStatusForManufacturerRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToDistributor">
+      <soap:operation soapAction="http://tempuri.org/sendInformationToDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToSeller">
+      <soap:operation soapAction="http://tempuri.org/sendInformationToSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OrderRequestsWebServiceSoap12" type="tns:OrderRequestsWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoOrderID">
+      <soap12:operation soapAction="http://tempuri.org/autoOrderID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToDistributorID">
+      <soap12:operation soapAction="http://tempuri.org/autoRequestToDistributorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoRequestToManufacturerID">
+      <soap12:operation soapAction="http://tempuri.org/autoRequestToManufacturerID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeOrder">
+      <soap12:operation soapAction="http://tempuri.org/makeOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateTotalCost">
+      <soap12:operation soapAction="http://tempuri.org/calculateTotalCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllOrderDetailsForSeller">
+      <soap12:operation soapAction="http://tempuri.org/getAllOrderDetailsForSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptPendingOrder">
+      <soap12:operation soapAction="http://tempuri.org/acceptPendingOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToDistributor">
+      <soap12:operation soapAction="http://tempuri.org/sendRequestToDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToDistributor">
+      <soap12:operation soapAction="http://tempuri.org/getAllRequestsSentToDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForDistributor">
+      <soap12:operation soapAction="http://tempuri.org/getAllRequestsForDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForDistributorRequest">
+      <soap12:operation soapAction="http://tempuri.org/updateStatusForDistributorRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendRequestToManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/sendRequestToManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsForManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/getAllRequestsForManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllRequestsSentToManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/getAllRequestsSentToManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateStatusForManufacturerRequest">
+      <soap12:operation soapAction="http://tempuri.org/updateStatusForManufacturerRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToDistributor">
+      <soap12:operation soapAction="http://tempuri.org/sendInformationToDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInformationToSeller">
+      <soap12:operation soapAction="http://tempuri.org/sendInformationToSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderRequestsWebService">
+    <wsdl:port name="OrderRequestsWebServiceSoap" binding="tns:OrderRequestsWebServiceSoap">
+      <soap:address location="https://localhost:44331/OrderRequestsWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OrderRequestsWebServiceSoap12" binding="tns:OrderRequestsWebServiceSoap12">
+      <soap12:address location="https://localhost:44331/OrderRequestsWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

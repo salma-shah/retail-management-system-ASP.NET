@@ -1,0 +1,1680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="autoMaterialID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoMaterialIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoMaterialIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertMaterialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autoCategoryID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoCategoryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoCategoryIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertCategoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="autoBlanketID">
+        <s:complexType />
+      </s:element>
+      <s:element name="autoBlanketIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autoBlanketIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertBlanket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="colour" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertBlanketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertBlanketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoryName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCategoryNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCategoryNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoryID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoryIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCategoryIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchCategoryByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchCategoryByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchCategoryByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchCategoryByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchCategoryByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchCategoryByNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterialName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMaterialNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaterialNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterialID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="materialName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMaterialIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMaterialIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllMaterials">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllMaterialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllMaterialsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchMaterialByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchMaterialByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchMaterialByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchMaterialByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="materialName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchMaterialByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchMaterialByNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBlanketNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketIDs">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBlanketIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketIDsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getBlanketPriceResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBlanketIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBlanketIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByIDManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByIDManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByIDManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByPriceManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaManufacturer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colour" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByCriteriaManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByIDDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByIDDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByIDDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByPriceDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colour" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByCriteriaDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByPriceSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByPriceSellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colour" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchBlanketByCriteriaSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchBlanketByCriteriaSellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBlanket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteBlanketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteBlanketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateBlanket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blanketName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materialID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="size" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colour" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateBlanketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateBlanketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateBlanketPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateBlanketPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateBlanketPriceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateProductionCapacity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="productionCapacity" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateProductionCapacityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateProductionCapacityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateLeadTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blanketID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leadTimeDays" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateLeadTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateLeadTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllBlanketDetailsForManufacturer">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllBlanketDetailsForManufacturerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllBlanketDetailsForManufacturerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllBlanketDetailsForSeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllBlanketDetailsForSellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllBlanketDetailsForSellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllBlanketDetailsForDistributor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="distributorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllBlanketDetailsForDistributorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllBlanketDetailsForDistributorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="autoMaterialIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoMaterialID" />
+  </wsdl:message>
+  <wsdl:message name="autoMaterialIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoMaterialIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:insertMaterial" />
+  </wsdl:message>
+  <wsdl:message name="insertMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:insertMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="autoCategoryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoCategoryID" />
+  </wsdl:message>
+  <wsdl:message name="autoCategoryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoCategoryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:insertCategory" />
+  </wsdl:message>
+  <wsdl:message name="insertCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:insertCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="autoBlanketIDSoapIn">
+    <wsdl:part name="parameters" element="tns:autoBlanketID" />
+  </wsdl:message>
+  <wsdl:message name="autoBlanketIDSoapOut">
+    <wsdl:part name="parameters" element="tns:autoBlanketIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertBlanketSoapIn">
+    <wsdl:part name="parameters" element="tns:insertBlanket" />
+  </wsdl:message>
+  <wsdl:message name="insertBlanketSoapOut">
+    <wsdl:part name="parameters" element="tns:insertBlanketResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getCategoryName" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getCategoryNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getCategoryID" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getCategoryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="getAllCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchCategoryByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:searchCategoryByID" />
+  </wsdl:message>
+  <wsdl:message name="searchCategoryByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:searchCategoryByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchCategoryByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:searchCategoryByName" />
+  </wsdl:message>
+  <wsdl:message name="searchCategoryByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:searchCategoryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaterialName" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaterialNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getMaterialID" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getMaterialIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllMaterialsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllMaterials" />
+  </wsdl:message>
+  <wsdl:message name="getAllMaterialsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllMaterialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchMaterialByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:searchMaterialByID" />
+  </wsdl:message>
+  <wsdl:message name="searchMaterialByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:searchMaterialByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchMaterialByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:searchMaterialByName" />
+  </wsdl:message>
+  <wsdl:message name="searchMaterialByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:searchMaterialByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketName" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketIDs" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketPrice" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getBlanketID" />
+  </wsdl:message>
+  <wsdl:message name="getBlanketIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getBlanketIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByIDManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByIDManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByIDManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByIDManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByIDDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByIDDistributor" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByIDDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByIDDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceDistributor" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaDistributor" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaDistributorResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceSeller" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByPriceSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByPriceSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaSeller" />
+  </wsdl:message>
+  <wsdl:message name="searchBlanketByCriteriaSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:searchBlanketByCriteriaSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteBlanketSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteBlanket" />
+  </wsdl:message>
+  <wsdl:message name="deleteBlanketSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteBlanketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateBlanketSoapIn">
+    <wsdl:part name="parameters" element="tns:updateBlanket" />
+  </wsdl:message>
+  <wsdl:message name="updateBlanketSoapOut">
+    <wsdl:part name="parameters" element="tns:updateBlanketResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateBlanketPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:updateBlanketPrice" />
+  </wsdl:message>
+  <wsdl:message name="updateBlanketPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:updateBlanketPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateProductionCapacitySoapIn">
+    <wsdl:part name="parameters" element="tns:updateProductionCapacity" />
+  </wsdl:message>
+  <wsdl:message name="updateProductionCapacitySoapOut">
+    <wsdl:part name="parameters" element="tns:updateProductionCapacityResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateLeadTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:updateLeadTime" />
+  </wsdl:message>
+  <wsdl:message name="updateLeadTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:updateLeadTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForManufacturerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForManufacturer" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForManufacturerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForManufacturerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForSellerSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForSeller" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForSellerSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForSellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForDistributorSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForDistributor" />
+  </wsdl:message>
+  <wsdl:message name="getAllBlanketDetailsForDistributorSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllBlanketDetailsForDistributorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BlanketWebServiceSoap">
+    <wsdl:operation name="autoMaterialID">
+      <wsdl:input message="tns:autoMaterialIDSoapIn" />
+      <wsdl:output message="tns:autoMaterialIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <wsdl:input message="tns:insertMaterialSoapIn" />
+      <wsdl:output message="tns:insertMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="autoCategoryID">
+      <wsdl:input message="tns:autoCategoryIDSoapIn" />
+      <wsdl:output message="tns:autoCategoryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCategory">
+      <wsdl:input message="tns:insertCategorySoapIn" />
+      <wsdl:output message="tns:insertCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="autoBlanketID">
+      <wsdl:input message="tns:autoBlanketIDSoapIn" />
+      <wsdl:output message="tns:autoBlanketIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanket">
+      <wsdl:input message="tns:insertBlanketSoapIn" />
+      <wsdl:output message="tns:insertBlanketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryName">
+      <wsdl:input message="tns:getCategoryNameSoapIn" />
+      <wsdl:output message="tns:getCategoryNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryID">
+      <wsdl:input message="tns:getCategoryIDSoapIn" />
+      <wsdl:output message="tns:getCategoryIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <wsdl:input message="tns:getAllCategoriesSoapIn" />
+      <wsdl:output message="tns:getAllCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByID">
+      <wsdl:input message="tns:searchCategoryByIDSoapIn" />
+      <wsdl:output message="tns:searchCategoryByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByName">
+      <wsdl:input message="tns:searchCategoryByNameSoapIn" />
+      <wsdl:output message="tns:searchCategoryByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialName">
+      <wsdl:input message="tns:getMaterialNameSoapIn" />
+      <wsdl:output message="tns:getMaterialNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialID">
+      <wsdl:input message="tns:getMaterialIDSoapIn" />
+      <wsdl:output message="tns:getMaterialIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaterials">
+      <wsdl:input message="tns:getAllMaterialsSoapIn" />
+      <wsdl:output message="tns:getAllMaterialsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByID">
+      <wsdl:input message="tns:searchMaterialByIDSoapIn" />
+      <wsdl:output message="tns:searchMaterialByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByName">
+      <wsdl:input message="tns:searchMaterialByNameSoapIn" />
+      <wsdl:output message="tns:searchMaterialByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <wsdl:input message="tns:getBlanketNameSoapIn" />
+      <wsdl:output message="tns:getBlanketNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketIDs">
+      <wsdl:input message="tns:getBlanketIDsSoapIn" />
+      <wsdl:output message="tns:getBlanketIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketPrice">
+      <wsdl:input message="tns:getBlanketPriceSoapIn" />
+      <wsdl:output message="tns:getBlanketPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketID">
+      <wsdl:input message="tns:getBlanketIDSoapIn" />
+      <wsdl:output message="tns:getBlanketIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDManufacturer">
+      <wsdl:input message="tns:searchBlanketByIDManufacturerSoapIn" />
+      <wsdl:output message="tns:searchBlanketByIDManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceManufacturer">
+      <wsdl:input message="tns:searchBlanketByPriceManufacturerSoapIn" />
+      <wsdl:output message="tns:searchBlanketByPriceManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaManufacturer">
+      <wsdl:input message="tns:searchBlanketByCriteriaManufacturerSoapIn" />
+      <wsdl:output message="tns:searchBlanketByCriteriaManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDDistributor">
+      <wsdl:input message="tns:searchBlanketByIDDistributorSoapIn" />
+      <wsdl:output message="tns:searchBlanketByIDDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceDistributor">
+      <wsdl:input message="tns:searchBlanketByPriceDistributorSoapIn" />
+      <wsdl:output message="tns:searchBlanketByPriceDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaDistributor">
+      <wsdl:input message="tns:searchBlanketByCriteriaDistributorSoapIn" />
+      <wsdl:output message="tns:searchBlanketByCriteriaDistributorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceSeller">
+      <wsdl:input message="tns:searchBlanketByPriceSellerSoapIn" />
+      <wsdl:output message="tns:searchBlanketByPriceSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaSeller">
+      <wsdl:input message="tns:searchBlanketByCriteriaSellerSoapIn" />
+      <wsdl:output message="tns:searchBlanketByCriteriaSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <wsdl:input message="tns:deleteBlanketSoapIn" />
+      <wsdl:output message="tns:deleteBlanketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanket">
+      <wsdl:input message="tns:updateBlanketSoapIn" />
+      <wsdl:output message="tns:updateBlanketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanketPrice">
+      <wsdl:input message="tns:updateBlanketPriceSoapIn" />
+      <wsdl:output message="tns:updateBlanketPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProductionCapacity">
+      <wsdl:input message="tns:updateProductionCapacitySoapIn" />
+      <wsdl:output message="tns:updateProductionCapacitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLeadTime">
+      <wsdl:input message="tns:updateLeadTimeSoapIn" />
+      <wsdl:output message="tns:updateLeadTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForManufacturer">
+      <wsdl:input message="tns:getAllBlanketDetailsForManufacturerSoapIn" />
+      <wsdl:output message="tns:getAllBlanketDetailsForManufacturerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForSeller">
+      <wsdl:input message="tns:getAllBlanketDetailsForSellerSoapIn" />
+      <wsdl:output message="tns:getAllBlanketDetailsForSellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForDistributor">
+      <wsdl:input message="tns:getAllBlanketDetailsForDistributorSoapIn" />
+      <wsdl:output message="tns:getAllBlanketDetailsForDistributorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BlanketWebServiceSoap" type="tns:BlanketWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoMaterialID">
+      <soap:operation soapAction="http://tempuri.org/autoMaterialID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <soap:operation soapAction="http://tempuri.org/insertMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoCategoryID">
+      <soap:operation soapAction="http://tempuri.org/autoCategoryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCategory">
+      <soap:operation soapAction="http://tempuri.org/insertCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoBlanketID">
+      <soap:operation soapAction="http://tempuri.org/autoBlanketID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanket">
+      <soap:operation soapAction="http://tempuri.org/insertBlanket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryName">
+      <soap:operation soapAction="http://tempuri.org/getCategoryName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryID">
+      <soap:operation soapAction="http://tempuri.org/getCategoryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <soap:operation soapAction="http://tempuri.org/getAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByID">
+      <soap:operation soapAction="http://tempuri.org/searchCategoryByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByName">
+      <soap:operation soapAction="http://tempuri.org/searchCategoryByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialName">
+      <soap:operation soapAction="http://tempuri.org/getMaterialName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialID">
+      <soap:operation soapAction="http://tempuri.org/getMaterialID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaterials">
+      <soap:operation soapAction="http://tempuri.org/getAllMaterials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByID">
+      <soap:operation soapAction="http://tempuri.org/searchMaterialByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByName">
+      <soap:operation soapAction="http://tempuri.org/searchMaterialByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <soap:operation soapAction="http://tempuri.org/getBlanketName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketIDs">
+      <soap:operation soapAction="http://tempuri.org/getBlanketIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketPrice">
+      <soap:operation soapAction="http://tempuri.org/getBlanketPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketID">
+      <soap:operation soapAction="http://tempuri.org/getBlanketID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDManufacturer">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByIDManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceManufacturer">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByPriceManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaManufacturer">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByCriteriaManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDDistributor">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByIDDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceDistributor">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByPriceDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaDistributor">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByCriteriaDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceSeller">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByPriceSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaSeller">
+      <soap:operation soapAction="http://tempuri.org/searchBlanketByCriteriaSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <soap:operation soapAction="http://tempuri.org/deleteBlanket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanket">
+      <soap:operation soapAction="http://tempuri.org/updateBlanket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanketPrice">
+      <soap:operation soapAction="http://tempuri.org/updateBlanketPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductionCapacity">
+      <soap:operation soapAction="http://tempuri.org/updateProductionCapacity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLeadTime">
+      <soap:operation soapAction="http://tempuri.org/updateLeadTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForManufacturer">
+      <soap:operation soapAction="http://tempuri.org/getAllBlanketDetailsForManufacturer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForSeller">
+      <soap:operation soapAction="http://tempuri.org/getAllBlanketDetailsForSeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForDistributor">
+      <soap:operation soapAction="http://tempuri.org/getAllBlanketDetailsForDistributor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BlanketWebServiceSoap12" type="tns:BlanketWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autoMaterialID">
+      <soap12:operation soapAction="http://tempuri.org/autoMaterialID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <soap12:operation soapAction="http://tempuri.org/insertMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoCategoryID">
+      <soap12:operation soapAction="http://tempuri.org/autoCategoryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCategory">
+      <soap12:operation soapAction="http://tempuri.org/insertCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="autoBlanketID">
+      <soap12:operation soapAction="http://tempuri.org/autoBlanketID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertBlanket">
+      <soap12:operation soapAction="http://tempuri.org/insertBlanket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryName">
+      <soap12:operation soapAction="http://tempuri.org/getCategoryName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryID">
+      <soap12:operation soapAction="http://tempuri.org/getCategoryID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCategories">
+      <soap12:operation soapAction="http://tempuri.org/getAllCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByID">
+      <soap12:operation soapAction="http://tempuri.org/searchCategoryByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchCategoryByName">
+      <soap12:operation soapAction="http://tempuri.org/searchCategoryByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialName">
+      <soap12:operation soapAction="http://tempuri.org/getMaterialName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialID">
+      <soap12:operation soapAction="http://tempuri.org/getMaterialID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMaterials">
+      <soap12:operation soapAction="http://tempuri.org/getAllMaterials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByID">
+      <soap12:operation soapAction="http://tempuri.org/searchMaterialByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchMaterialByName">
+      <soap12:operation soapAction="http://tempuri.org/searchMaterialByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketName">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketIDs">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketPrice">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBlanketID">
+      <soap12:operation soapAction="http://tempuri.org/getBlanketID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByIDManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByPriceManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByCriteriaManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByIDDistributor">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByIDDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceDistributor">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByPriceDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaDistributor">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByCriteriaDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByPriceSeller">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByPriceSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchBlanketByCriteriaSeller">
+      <soap12:operation soapAction="http://tempuri.org/searchBlanketByCriteriaSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBlanket">
+      <soap12:operation soapAction="http://tempuri.org/deleteBlanket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanket">
+      <soap12:operation soapAction="http://tempuri.org/updateBlanket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBlanketPrice">
+      <soap12:operation soapAction="http://tempuri.org/updateBlanketPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProductionCapacity">
+      <soap12:operation soapAction="http://tempuri.org/updateProductionCapacity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLeadTime">
+      <soap12:operation soapAction="http://tempuri.org/updateLeadTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForManufacturer">
+      <soap12:operation soapAction="http://tempuri.org/getAllBlanketDetailsForManufacturer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForSeller">
+      <soap12:operation soapAction="http://tempuri.org/getAllBlanketDetailsForSeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBlanketDetailsForDistributor">
+      <soap12:operation soapAction="http://tempuri.org/getAllBlanketDetailsForDistributor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BlanketWebService">
+    <wsdl:port name="BlanketWebServiceSoap" binding="tns:BlanketWebServiceSoap">
+      <soap:address location="https://localhost:44331/BlanketWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BlanketWebServiceSoap12" binding="tns:BlanketWebServiceSoap12">
+      <soap12:address location="https://localhost:44331/BlanketWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
